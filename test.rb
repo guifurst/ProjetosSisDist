@@ -85,10 +85,10 @@ def list_ticks(vetor)
   puts("\n")
   for i in vetor
     puts("")
-    puts("Origem:", i["origem"])
-    puts("Destino:", i["destino"])
-    puts("Data:", i["data"])
-    puts("vagas:", i["vagas"])
+    puts("Origem:" + i["origem"])
+    puts("Destino:"+ i["destino"])
+    puts("Data:", + ["data"])
+    puts("vagas:"+ i["vagas"])
   end
 end
 
@@ -116,10 +116,11 @@ def buy_hotel
 end
 
 
-menu
+#menu
 #gets var
 #putsa(var)
-response = Faraday.new  "http://localhost:9200"
+response = Faraday.new  "https://10.15.55.160/web_api/login"
+
 json = JSON.parse(response.get.body)
 pp json
 
